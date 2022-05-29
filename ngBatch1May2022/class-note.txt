@@ -1,0 +1,7 @@
+1. Basic angular project structure(Default one)
+2. Basic Angular file information
+3. Angular lifecycle
+4. How to bootstrap custom module instead AppModule
+5. How to create module and components
+6. How to make relations between components
+7. 
