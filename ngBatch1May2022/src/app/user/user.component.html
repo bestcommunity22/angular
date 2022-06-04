@@ -1,7 +1,7 @@
 <div class="container border p-2">
     <div class="row">
         <div class="col-4">
-            <app-user-registration (UserList)="receiveChildRegistData($event)"></app-user-registration>
+            <app-user-registration (userList)="receiveChildRegistData($event)"></app-user-registration>
         </div>
         <div class="col-8">
             <app-user-list [dataSource]="childUserList"></app-user-list>

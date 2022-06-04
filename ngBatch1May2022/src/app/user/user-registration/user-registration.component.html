@@ -1,29 +1,29 @@
 <h1>User Registration</h1>
 <hr>
-<form action="#" (submit)="onFormSubmit()" #registerForm>
+<form (submit)="onFormSubmit()" ngNativeValidate>
     <div class="form-group">
         <label for="FirstName">First Name <span class="text-danger">*</span></label>
-        <input type="text" class="form-control rounded-0" required/>
+        <input type="text" class="form-control rounded-0" id="firstName" name="firstName" [(ngModel)]="user.firstName" required/>
     </div>
     <div class="form-group">
         <label for="MiddleName">Middle Name</label>
-        <input type="text" class="form-control rounded-0" />
+        <input type="text" class="form-control rounded-0" name="middleName" [(ngModel)]="user.middleName" />
     </div>
     <div class="form-group">
         <label for="LastName">Last Name <span class="text-danger">*</span></label>
-        <input type="text" class="form-control rounded-0" required />
+        <input type="text" class="form-control rounded-0" name="lastName" [(ngModel)]="user.lastName" required />
     </div>
     <div class="form-group">
         <label for="PrimaryContrect">Email<span class="text-danger">*</span></label>
-        <input type="email" class="form-control rounded-0" required />
+        <input type="email" class="form-control rounded-0" name="email" [(ngModel)]="user.email" required />
     </div>
     <div class="form-group">
         <label for="PrimaryContrect">Primary Contact <span class="text-danger">*</span></label>
-        <input type="text" class="form-control rounded-0" required />
+        <input type="text" class="form-control rounded-0" name="phone1" [(ngModel)]="user.phone1" required />
     </div>
     <div class="form-group">
         <label for="PrimaryContact">Secondary Contact</label>
-        <input type="text" class="form-control rounded-0" />
+        <input type="text" class="form-control rounded-0" name="phone2" [(ngModel)]="user.phone2" />
     </div>
 
     <div class="btn-group">

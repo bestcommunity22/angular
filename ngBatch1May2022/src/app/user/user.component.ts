@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   }
 
   receiveChildRegistData(userList: Array<any>) {
+    this.childUserList = [];
     this.childUserList = userList;
   }
 }

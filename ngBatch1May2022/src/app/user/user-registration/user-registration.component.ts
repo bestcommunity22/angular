@@ -8,9 +8,13 @@ import { UserRegistration } from './user-registration';
 })
 export class UserRegistrationComponent implements OnInit {
 
+  // With out use ngModel
   @ViewChild('registerForm') registerFormRef: any;
+
   users: Array<UserRegistration> = [];
-  @Output('UserList') userListEvt: EventEmitter<Array<UserRegistration>> = new EventEmitter();
+  user: UserRegistration = {};
+  
+  @Output('userList') userListEvt: EventEmitter<Array<UserRegistration>> = new EventEmitter();
 
   constructor() { }
 
@@ -18,6 +22,15 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   onFormSubmit() {
+    // e.preventDefault();
+
+    this.users.push(this.user);
+
+    // Broadcast user list to parent
+    this.userListEvt.emit(this.users);
+  }
+
+  private _readFormDataUsingViewRef() {
     const nodes = this.registerFormRef.nativeElement.querySelectorAll('input');
 
     this.users.push({
@@ -28,10 +41,6 @@ export class UserRegistrationComponent implements OnInit {
       phone1: nodes[4].value,
       phone2: nodes[5].value
     });
-
-    // Broadcast user list to parent
-    this.userListEvt.emit(this.users);
   }
-
 
 }

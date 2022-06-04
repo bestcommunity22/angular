@@ -4,6 +4,7 @@ import { UserComponent } from './user.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { UserListComponent } from './user-list/user-list.component';
   ],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   bootstrap: [UserComponent]
 })
